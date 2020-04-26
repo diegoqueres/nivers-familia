@@ -2,7 +2,7 @@
   "name": "nivers-familia-mota",
   "version": "1.0.0",
   "description": "Script para alerta de aniversários de familiares.",
-  "main": "alert.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
