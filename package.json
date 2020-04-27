@@ -9,6 +9,7 @@
   "author": "Diego",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.17.1",
     "superagent": "^5.2.2"
   }
 }
