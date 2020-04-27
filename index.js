@@ -5,4 +5,5 @@ app.get('/',function(req,res){
     res.send("nivers-familia-mota application is running =-D");
 });
 
-app.listen(8081);
+const PORT = process.env.PORT || 8081;
+app.listen(PORT);
