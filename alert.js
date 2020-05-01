@@ -1,9 +1,15 @@
 const bot = require('./telegram-bot');
-const BOT_TOKEN = '';
-const CANAL_MT_TASKS_ALERT_ID = null; 
+const queries = require('./queries')
+const BOT_TOKEN = '1043066793:AAHoO6vd941IIMsxRkqMfh3N9Dg0QiMXdcI';
+const CANAL = '-1001368283905'; 
 
 (async () => {
     //Initializing alerts...
     bot.initialize(BOT_TOKEN);
-    await bot.sendMessage(CANAL_MT_TASKS_ALERT_ID, "Teste do Heroku Scheduler");
+    await queries.initialize();
+    let birthdays = await queries.getDayBirthdays();
+
+    
+    await bot.sendMessage(CANAL, "Teste do Heroku Scheduler");
+
 })();
