@@ -8,8 +8,7 @@ const CANAL = '-1001368283905';
     bot.initialize(BOT_TOKEN);
     await queries.initialize();
     let birthdays = await queries.getDayBirthdays();
-
     
-    await bot.sendMessage(CANAL, "Teste do Heroku Scheduler");
+    await bot.sendMessage(CANAL, `Teste do Heroku Scheduler: ` + birthdays);
 
 })();
