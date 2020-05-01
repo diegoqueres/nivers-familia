@@ -12,7 +12,7 @@ const telegram_bot = {
     
     await superagent
       .post(`https://api.telegram.org/bot${botToken}/sendMessage`)
-      .send({ chat_id: `${chatId}`, text: message })
+      .send({ chat_id: `${chatId}`, text: message, parse_mode: 'Markdown' })
       .set('Accept', 'application/json')
       .then(res => {
         if (res.body.ok)
