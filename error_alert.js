@@ -10,7 +10,7 @@ const error_alert = {
         const content = {
             'color': '#FF5733', 
             'channel': SLACK_BOT_CONFIG.channel, 
-            'text': `*Erro ao rodar aplicação:* ${msg}`
+            'text': `*Erro ao rodar aplicação:* ${msg}\nVocê pode conferir o log do Heroku, na pasta da aplicação, para buscar mais informações sobre esta ocorrência: _heroku logs --tail_`
         };
 
         await superagent
