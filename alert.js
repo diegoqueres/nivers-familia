@@ -19,6 +19,14 @@ const SLACK_BOT_CONFIG = {
         console.log("Connecting to database...");
         await queries.initialize();
 
+        //Teste do DIEGO
+        //PARA SIMULAR ALERTA NO SLACK 
+        //Causando erro propositalmente... :-O
+        let todayDate = moment(new Date()).format("DD/MM");
+        if (todayDate == "05/05") {
+            throw new Error("Something bad happened... (Relaaax.. Everything is fine!! It's a _DAYGO ERROR TEST_ :-P)");
+        }
+
         console.log("Checking the day birthdays...");
         let birthdays = await queries.getDayBirthdays();
         
