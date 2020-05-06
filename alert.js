@@ -19,32 +19,19 @@ const SLACK_BOT_CONFIG = {
         console.log("Connecting to database...");
         await queries.initialize();
 
-        //Teste do DIEGO
-        //PARA SIMULAR ALERTA NO SLACK 
-        //Causando erro propositalmente... :-O
-        let todayDate = moment(new Date()).format("DD/MM");
-        if (todayDate == "05/05") {
-            throw new Error("Something bad happened... (Relaaax.. Everything is fine!! It's a _DAYGO ERROR TEST_ :-P)");
-        }
-
         console.log("Checking the day birthdays...");
         let birthdays = await queries.getDayBirthdays();
         
         if (birthdays.length > 0) {
             console.log("There is birthdays today!! I will send telegram alert!");
-
-            let todayDateStr = moment(new Date()).format("DD/MM");
-            let msg = `🎂 Hoje temos *ANIVERSARIANTES* (${todayDateStr})🎂:\n`;
-            for (let aniversariante of birthdays) {
-                msg += `-${aniversariante.nome}\n`;
-            }
-            msg += "\nEnvie os seus *parabéns*! 🎂🥳👏";
-
+            let msg = getBithdayMessage(birthdays);
             await bot.sendMessage(CANAL, msg);
 
             console.log("Telegram alert has been sent!");
+
         } else {
             console.log("There isn't birthdays today :-(!");
+
         }
 
     } catch (err){
@@ -57,4 +44,12 @@ const SLACK_BOT_CONFIG = {
 
 })();
 
-
+function getBithdayMessage(birthdays) {
+    let todayDateStr = moment(new Date()).format("DD/MM");
+    let msg = `🎂 Hoje temos *ANIVERSARIANTES* (${todayDateStr})🎂:\n`;
+    for (let birthdayPerson of birthdays) {
+        msg += `-${birthdayPerson.nome}\n`;
+    }
+    msg += "\nEnvie os seus *parabéns*! 🎂🥳👏";
+    return msg;
+}
