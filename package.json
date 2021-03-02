@@ -1,7 +1,7 @@
 {
-  "name": "nivers-familia-mota",
+  "name": "nivers-familia",
   "version": "1.0.0",
-  "description": "Script para alerta de aniversários de familiares.",
+  "description": "Script para alerta de aniversários de familiares por um canal no TELEGRAM",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -10,6 +10,7 @@
   "author": "Diego",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "moment": "^2.25.1",
     "pg": "^8.0.3",

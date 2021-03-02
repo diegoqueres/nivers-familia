@@ -1,6 +1,8 @@
+require('dotenv').config();
+
 const { Pool } = require('pg'); 
 connectionString = {
-  connectionString: "postgres://fsmekhwyiwmbuh:c3aa72cc39b85640cade794a8acb57acaa878afc45ac52bebc699dcb2ff06099@ec2-54-159-112-44.compute-1.amazonaws.com:5432/dehcfh2854485q",
+  connectionString: process.env.DATABASE_URL,
   ssl: { rejectUnauthorized: false }
 };
 const pool = new Pool(connectionString);

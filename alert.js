@@ -1,12 +1,14 @@
+require('dotenv').config();
+
 const bot = require('./telegram-bot');
 const moment = require('moment');
 const queries = require('./queries')
 const errorAlert = require('./error_alert')
-const BOT_TOKEN = '1043066793:AAHoO6vd941IIMsxRkqMfh3N9Dg0QiMXdcI';
-const CANAL = '-1001368283905'; 
+const BOT_TOKEN = process.env.BOT_TOKEN;
+const CANAL = process.env.TELEGRAM_CHANNEL; 
 const SLACK_BOT_CONFIG = {
-    'channel': '#nivers-familia-mota',
-    'token': 'T0123M3R7B9/B012Y6X8DT4/vZfHTa2HNJ4YZqfhEaz8vm8n'
+    'channel': process.env.SLACK_BOT_CONFIG__CHANNEL,
+    'token': process.env.SLACK_BOT_CONFIG__TOKEN
 };
 
 (async () => {
@@ -41,6 +43,7 @@ const SLACK_BOT_CONFIG = {
     }
 
     console.log("End of execution.");
+    process.exit(1);
 
 })();
 
