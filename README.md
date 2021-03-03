@@ -1,7 +1,3 @@
-#nivers-familia
-
-Um robô simples em NodeJS para alerta de aniversários em um canal do Telegram.
-
 [![License: mit](https://img.shields.io/badge/License-mit-yellow.svg)](https://github.com/diegoqueres/nivers-familia/blob/main/LICENSE)
 # 👋 Bem Vindo ao Projeto Robô de Alerta de Aniversários no Telegram
 > 👋 *Welcome to Telegram Birthday Alert Robot Project*
